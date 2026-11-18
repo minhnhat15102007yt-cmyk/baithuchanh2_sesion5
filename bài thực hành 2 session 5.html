@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bài thực hành 2 session 5</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="lập-kế-hoạch-tài-chính-cá-nhân-bằng-chain-of-thought">Lập kế hoạch tài chính cá nhân bằng Chain-of-Thought</h1>
+<h2 id="đề-bài-">Đề bài :</h2>
+<p>Phòng Marketing cần sản xuất một bài PR chuyên sâu (khoảng 1000 - 1500 từ) giới thiệu giải pháp AI Chatbot mới cho doanh nghiệp. Việc sử dụng một prompt đơn lẻ để AI viết toàn bộ bài thường dẫn đến nội dung hời hợt, lặp ý và thiếu chiều sâu.<br>
+Bạn cần xây dựng một chuỗi prompt (Prompt Chain) gồm 3 bước để tạo ra bài viết chất lượng cao.</p>
+<h2 id="mục-tiêu-">Mục tiêu :</h2>
+<p>Bài viết PR đầu ra cuối cùng cần đạt cấu trúc chuẩn SEO bao gồm:</p>
+<ul>
+<li>Tiêu đề thu hút (Headline).</li>
+<li>Đoạn mở đầu (Lead) hấp dẫn giải quyết pain points.</li>
+<li>Các tiệu đề con (H2, H3) tương ứng với dàn ý.</li>
+<li>Lời kêu gọi hành động (CTA) rõ ràng ở cuối bài.</li>
+</ul>
+<h2 id="yêu-cầu-">Yêu cầu :</h2>
+<p>Thiết kế các prompt thành phần sao cho kết quả của prompt trước là đầu vào bắt buộc của prompt sau.<br>
+Quy định rõ cấu trúc dữ liệu truyền giữa các bước để đảm bảo tính nhất quán.<br>
+Thiết lập quy tắc xử lý khi AI viết bài dài bị ngắt quãng giữa chừng (đạt max token): cung cấp câu lệnh điều khiển tiếp tục tạo chính xác.</p>
+<h2 id="bài-làm">Bài làm</h2>
+<h3 id="bước-1-prompt-1-–-nghiên-cứu-khách-hàng-mục-tiêu--nỗi-đau-pain-points">Bước 1: Prompt 1 – Nghiên cứu khách hàng mục tiêu &amp; Nỗi đau (Pain Points)</h3>
+<ul>
+<li><strong>Mục đích:</strong> Tạo dữ liệu nền tảng (Input gốc) về khách hàng và vấn đề cần giải quyết.
+<ul>
+<li><strong>Nội dung Prompt:</strong><br>
+[Vai trò]: Chuyên gia nghiên cứu thị trường công nghệ B2B.<br>
+[Bối cảnh]: Công ty sắp ra mắt giải pháp AI Chatbot thế hệ mới dành cho doanh nghiệp.<br>
+[Nhiệm vụ]: Hãy phân tích khách hàng mục tiêu (Chủ doanh nghiệp SME, Trưởng phòng CSKH) và liệt kê 3 nỗi đau lớn nhất (pain points) của họ khi vận hành CSKH thủ công, kèm giải pháp tương ứng của AI Chatbot.<br>
+[Định dạng đầu ra]: Trình bày ngắn gọn bằng các gạch đầu dòng rõ ràng để làm dữ liệu đầu vào cho bước tiếp theo.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bước-2-prompt-2-–-thiết-lập-dàn-ý-chi-tiết-chuẩn-seo-outline">Bước 2: Prompt 2 – Thiết lập dàn ý chi tiết chuẩn SEO (Outline)</h3>
+<ul>
+<li><strong>Mục đích:</strong> Dùng kết quả của Bước 1 để xây dựng bộ khung hoàn chỉnh cho bài viết.
+<ul>
+<li><strong>Nội dung Prompt:</strong><br>
+[Ngữ cảnh &amp; Đầu vào]: Dựa trực tiếp vào danh sách Nỗi đau khách hàng và Giải pháp AI Chatbot đã phân tích ở Bước 1: {Dán kết quả Bước 1 vào đây}.<br>
+[Vai trò]: Biên tập viên Cấp cao / Chuyên gia SEO Content.<br>
+[Nhiệm vụ]: Lập dàn ý chi tiết cho bài viết PR chuyên sâu dài 1000 - 1500 từ về sản phẩm “AI Chatbot cho doanh nghiệp”.<br>
+[Cấu trúc bắt buộc]:</li>
+</ul>
+</li>
+<li>Tiêu đề thu hút (Headline) chứa từ khóa chính.</li>
+<li>Đoạn mở đầu (Lead) đánh trúng nỗi đau ở Bước 1.</li>
+<li>Các tiêu đề con (H2, H3) triển khai tính năng, lợi ích và hiệu quả thực tế.</li>
+<li>Lời kêu gọi hành động (CTA) rõ ràng ở cuối bài.<br>
+[Giọng điệu]: Chuyên nghiệp, khách quan, đáng tin cậy.</li>
+</ul>
+<h3 id="bước-3-prompt-3-–-triển-khai-viết-chi-tiết--tối-ưu-seo">Bước 3: Prompt 3 – Triển khai viết chi tiết &amp; Tối ưu SEO</h3>
+<ul>
+<li><strong>Mục đích:</strong> Viết nội dung hoàn chỉnh từ dàn ý Bước 2 và kiểm soát chất lượng văn phong.
+<ul>
+<li><strong>Nội dung Prompt:</strong><br>
+[Ngữ cảnh &amp; Đầu vào]: Dựa hoàn toàn vào dàn ý chi tiết ở Bước 2: {Dán kết quả Bước 2 vào đây}.<br>
+[Vai trò]: Copywriter công nghệ chuyên nghiệp.<br>
+[Nhiệm vụ]: Viết hoàn chỉnh bài PR chi tiết (khoảng 1000 - 1500 từ), lồng ghép từ khóa SEO tự nhiên.<br>
+[Ràng buộc kỹ thuật]:</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Giữ nguyên tone giọng chuyên nghiệp, tin cậy xuyên suốt từ đầu đến cuối bài.</li>
+<li>Không được tóm tắt hay viết lướt qua các mục H2, H3.</li>
+</ol>
+<h2 id="quy-tắc-xử-lý-đứt-gãy-ngữ-cảnh-max-token-handling">3. Quy tắc xử lý đứt gãy ngữ cảnh (Max Token Handling)</h2>
+<p>Khi AI viết bài dài và bị dừng đột ngột giữa chừng (do chạm giới hạn độ dài một lần trả lời), tuyệt đối không yêu cầu AI viết lại từ đầu. Sử dụng câu lệnh điều khiển sau để nối tiếp mạch văn:<br>
+<strong>Câu lệnh tiếp tục:</strong> <em>“Bạn đang bị ngắt quãng do giới hạn độ dài. Hãy đọc lại câu cuối cùng bạn vừa viết, giữ nguyên mạch văn và giọng điệu chuyên nghiệp hiện tại, sau đó viết tiếp phần còn lại của dàn ý từ đúng vị trí bị dừng.”</em></p>
+</div>
+</body>
+
+</html>
